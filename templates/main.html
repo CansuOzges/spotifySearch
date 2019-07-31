@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotify Top 10 Search</title>
+</head>
+<body>
+<h2>Find a random artist's top 10 songs in a specific genre.</h2>
+<h3>Genres are: rock, alternative rock, pop, blues, country, electronic, jazz, r&b, rap, reggae.</h3>
+<div class="container">
+    <form method="post" action="">
+        {% csrf_token %}
+        <div>
+            {% if tracks %}
+                <p style="color:red">{{ tracks.message }} </p>
+            {% endif %}
+            <label for="genre">{{ _("Genre") }}</label>
+            <input id="genre" type="text" class="form-control" name="genre" placeholder="{{ _("Genre") }}">
+            <br />
+        </div>
+        <br />
+        <div >
+            <button type="submit" id="btnSubmit">{{ _("Search") }}</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

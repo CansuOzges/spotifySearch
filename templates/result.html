@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotify Top 10 Search</title>
+</head>
+<body>
+{% if tracks %}
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Artist</th>
+            <th>Track</th>
+            <th>Album Cover</th>
+            <th>Preview Link</th>
+        </tr>
+        </thead>
+        {% for track in tracks %}
+            <tr>
+                <td>{{ track.artist }}</td>
+                <td>{{ track.track }}</td>
+                <td><img src="{{track.album_image_url}}"></td>
+                <td>{% if track.preview_url %}
+                    <a target="_blank" href="{{track.preview_url}}">Listen for 30 seconds</a> <br />
+                    <audio controls>
+                        <source src="{{ track.preview_url }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                {% endif %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>Please give an existed genre as a parameter. Genres are: rock, alternative rock, pop, blues, country, electronic, jazz, r&b, rap, reggae. </p>
+{% endif %}
+
+</body>
+</html>
