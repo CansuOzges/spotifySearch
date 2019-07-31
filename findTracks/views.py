@@ -6,8 +6,8 @@ from django.template import loader
 """
 Spotfiy client id and secret for development purposes.
 """
-client_id = "f9d9e68e68194c5a90c56ef00c77eb1f"
-client_secret = "65d8f28bc62a4c208d805f427fb17e81"
+client_id = ""
+client_secret = ""
 
 """
 read genre.json file and load as json
