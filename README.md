@@ -20,4 +20,4 @@ base64
 
  Python 3 and Django 2.2.3 are used. 
 
-!!! client_id and client_secret are empty.You can enter your client_id and secret in findTracks/view.py. You can get it from spotfiy by creating an app. !!!
+!!! client_id and client_secret are empty.You can enter your client_id and secret in findTracks/views.py. You can get it from spotfiy by creating an app. !!!
